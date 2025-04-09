@@ -170,20 +170,15 @@ function App() {
 }
 
 const mainStyle = css`
-  padding: 3rem 0;
-  height: 100vh;
+  padding-top: 5rem;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // justify-content: center;
-  gap: 3rem;
 
   section {
     width: 100%;
+    margin-bottom: 3rem;
 
-    :first-child {
-      margin-top: 5rem;
+    :last-child {
+      margin-bottom: unset;
     }
   }
 `;

@@ -46,9 +46,11 @@ const GlobalStyles = css`
 
   body {
     padding: 0 2.4rem;
+    padding-bottom: 3rem;
 
     @media (max-width: 1023px) {
       padding: 0 1.6rem;
+      padding-bottom: 6rem;
     }
   }
 `;
