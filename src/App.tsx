@@ -103,7 +103,7 @@ function App() {
       <main css={mainStyle}>
         {/* 모델 */}
         <section>
-          <h1 css={titleStyle}>AI를 활용해 뇌출혈 예측하기</h1>
+          <h1 css={titleStyle}>AI를 활용한 뇌출혈 예측</h1>
         </section>
 
         {/* 파일 업로드 */}
