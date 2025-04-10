@@ -15,8 +15,8 @@ function App() {
 
   const resultRef = useRef<HTMLDivElement>(null);
 
-  // 모델 초기화
   useEffect(() => {
+    // 모델 초기화 로직
     const init = async () => {
       const modelURL = `${URL}model.json`;
       const metadataURL = `${URL}metadata.json`;
@@ -38,7 +38,7 @@ function App() {
 
   // 예측
   const predict = async () => {
-    // predict can take in an image, video or canvas html element
+    // 업로드한 이미지를 바탕으로 모델이 예측
     if (model && image) {
       const imgElement = document.createElement("img");
       imgElement.src = image;
@@ -53,13 +53,14 @@ function App() {
         arr.push(classPrediction);
       }
 
+      // 예측 결과를 화면에 렌더링
       setResult(arr);
     } else if (!model) {
       alert("모델이 존재하지 않습니다!");
     }
   };
 
-  // 파일 업로드
+  // 파일 업로드 - 드래그 앤 드롭 로직
   const handleDragEnter = () => setIsActive(true);
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -81,6 +82,7 @@ function App() {
     }
   };
 
+  // 파일 업로드 - 클릭 로직
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     if (file) {
@@ -92,7 +94,8 @@ function App() {
     }
   };
 
-  const removeImage = () => {
+  // 이미지 삭제
+  const handleRemove = () => {
     setImage(null);
     setResult([]);
   };
@@ -115,7 +118,7 @@ function App() {
                 <button
                   type="button"
                   css={buttonStyles("reset")}
-                  onClick={removeImage}
+                  onClick={handleRemove}
                 >
                   이미지 삭제
                 </button>
@@ -143,7 +146,6 @@ function App() {
         </section>
 
         {/* 결과 */}
-
         <section>
           {image && (
             <div css={resultContainerStyle}>
