@@ -259,6 +259,7 @@ const imgContainerStyle = css`
 `;
 
 const labelStyle = (isActive: boolean) => css`
+  cursor: pointer;
   width: 100%;
   height: 100%;
   text-align: center;
