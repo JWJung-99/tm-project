@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /** @jsxImportSource @emotion/react */
 import { css, Global } from "@emotion/react";
 import * as tmImage from "@teachablemachine/image";
